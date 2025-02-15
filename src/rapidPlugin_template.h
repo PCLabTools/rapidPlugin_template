@@ -35,7 +35,7 @@ class rapidPlugin_template : public rapidPlugin
 };
 
 /**
- * @brief Construct a new rapidPlugin template::rapidPlugin template object
+ * @brief Construct a new rapidPlugin_template object
  * 
  * @param identity string literal containing task name
  */
@@ -91,9 +91,9 @@ void rapidPlugin_template::main_loop(void* pModule)
  * This function is to be used for creating custom states 
  * that are called when rapidFunction commands are received
  * 
- * @param incoming 
- * @param messageBuffer 
- * @return uint8_t 
+ * @param incoming message broken into 2 strings: function and parameters
+ * @param messageBuffer buffer to store return message
+ * @return uint8_t return 0 if the function was handled, 1 if not
  */
 uint8_t rapidPlugin_template::interface(rapidFunction incoming, char messageBuffer[])
 {
