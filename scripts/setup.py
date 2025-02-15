@@ -136,7 +136,7 @@ if __name__ == "__main__":
     write_README()
 
     folder_path = '.'
-    search_term = 'unique_term'
+    search_term = 'template'
       
     recursively_update_files(folder_path, search_term, project_name)
     update_file_name(folder_path)
