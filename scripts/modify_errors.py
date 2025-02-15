@@ -19,7 +19,7 @@ enum class rapidPluginErrors_t
 {
   NO_ERROR = 0,
   UNKNOWN_ERROR
-}
+} rapidPluginErrors;
 
 '''
 

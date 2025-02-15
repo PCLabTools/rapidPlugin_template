@@ -42,8 +42,8 @@ except:
 print(report + 'running rapidPlugin_template \'build.py\'...')
 
 try:
-  exec(open('scripts/create_dependencies.py').read())
-  exec(open('scripts/modify_errors.py').read())
+  exec(open('create_dependencies.py').read())
+  exec(open('modify_errors.py').read())
 
   print(report + 'rapidPlugin_template \'build.py\' complete')
 
