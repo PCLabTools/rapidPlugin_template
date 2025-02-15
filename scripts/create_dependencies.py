@@ -11,11 +11,13 @@ contents = '''/**
  * 
  */
 
- // #define rapidPlugin_template_override_main_loop
- // #define rapidPlugin_template_override_interface
+// #define rapidPlugin_template_override_main_loop
+// #define rapidPlugin_template_override_interface
 
 #ifndef template_h
 #define template_h
+
+#include "errors.h"
 
 #include "rapidPlugin_template.h"
 
