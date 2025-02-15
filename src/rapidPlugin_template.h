@@ -12,6 +12,10 @@
 #ifndef rapidPlugin_template_h
 #define rapidPlugin_template_h
 
+#ifndef rapidPlugin_template_stack_size
+#define rapidPlugin_template_stack_size 128
+#endif
+
 #include "rapidRTOS.h"
 
 /**
@@ -48,7 +52,7 @@ rapidPlugin_template::rapidPlugin_template(const char* identity)
  */
 BaseType_t rapidPlugin_template::run()
 {
-  return rapidPlugin::run(&main_loop);
+  return rapidPlugin::run(&main_loop, rapidPlugin_template_stack_size);
 }
 
 /**
@@ -61,9 +65,10 @@ BaseType_t rapidPlugin_template::run()
  */
 BaseType_t rapidPlugin_template::runCore(BaseType_t core)
 {
-  return rapidPlugin::runCore(core, &main_loop);
+  return rapidPlugin::runCore(core, &main_loop, rapidPlugin_template_stack_size);
 }
 
+#ifndef rapidPlugin_template_override_main_loop
 /**
  * @brief main loop task
  * 
@@ -78,7 +83,9 @@ void rapidPlugin_template::main_loop(void* pModule)
     vTaskDelay(1000 / portTICK_PERIOD_MS);
   }
 }
+#endif
 
+#ifndef rapidPlugin_template_override_interface
 /**
  * @brief Interface handler extended functions.
  * This function is to be used for creating custom states 
@@ -105,5 +112,8 @@ uint8_t rapidPlugin_template::interface(rapidFunction incoming, char messageBuff
   } while (false);
   return 1;
 }
-
 #endif
+
+#include "template.h"
+
+#endif // rapidPlugin_template_h
