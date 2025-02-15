@@ -20,8 +20,9 @@
       "maintainer": true
     }
   ],
-  "scripts": {
-      "build": "build.py"
+  "build": 
+  {
+      "extraScript": "scripts/build.py"
   },
   "license": "GNU",
   "homepage": "https://github.com/PCLabTools/rapidPlugin_template",
