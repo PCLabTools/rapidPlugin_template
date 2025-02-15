@@ -21,7 +21,7 @@
     }
   ],
   "scripts": {
-      "postinstall": "scripts/install.py"
+      "build": "build.py"
   },
   "license": "GNU",
   "homepage": "https://github.com/PCLabTools/rapidPlugin_template",
