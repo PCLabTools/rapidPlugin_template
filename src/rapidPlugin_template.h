@@ -13,7 +13,7 @@
 #define rapidPlugin_template_h
 
 #ifndef rapidPlugin_template_stack_size
-#define rapidPlugin_template_stack_size 128
+#define rapidPlugin_template_stack_size 64
 #endif
 
 #include "rapidRTOS.h"
