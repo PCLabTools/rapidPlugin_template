@@ -30,6 +30,12 @@ custom_errors = '''  // template ERRORS
 footer = '''};
 
 /**
+ * @brief Short-hand define for rapidPluginErrors_t
+ * 
+ */
+#define rapidError rapidPluginErrors_t
+
+/**
  * @brief Struct containing the currently held error and the time it was set
  * 
  */
@@ -40,12 +46,15 @@ struct currentError_t
 } currentError  = {0, rapidPluginErrors_t::NO_ERROR};
 
 /**
- * @brief Sets the current error and time
+ * @brief Set the current error and the time it was set
  * 
- * @param A rapidPlugintErrors_t error
- * 
+ * @param rapidError error 
  */
-#define SET_CURRENT_ERROR(A) currentError.time = millis(); currentError.error = rapidPluginErrors_t::A
+void setCurrentError(rapidPluginErrors_t error)
+{
+  currentError.time = millis();
+  currentError.error = error;
+}
 '''
 
 try:
