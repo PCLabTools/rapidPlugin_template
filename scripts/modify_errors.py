@@ -21,14 +21,31 @@ enum class rapidPluginErrors_t
   UNKNOWN_ERROR,            // Unknown error is a catch to be used when no other error is applicable
 '''
 
-footer = '''} rapidPluginErrors;
-
-'''
-
 custom_errors = '''  // template ERRORS
   TEMPLATE_ERROR1,          // Template error 1
   TEMPLATE_ERROR2,          // Template error 2
   TEMPLATE_ERROR3,          // Template error 3
+'''
+
+footer = '''};
+
+/**
+ * @brief Struct containing the currently held error and the time it was set
+ * 
+ */
+struct currentError_t
+{
+  time_t time;
+  rapidPluginErrors_t error;
+} currentError  = {0, rapidPluginErrors_t::NO_ERROR};
+
+/**
+ * @brief Sets the current error and time
+ * 
+ * @param A rapidPlugintErrors_t error
+ * 
+ */
+#define SET_CURRENT_ERROR(A) currentError.time = millis(); currentError.error = rapidPluginErrors_t::A
 '''
 
 try:
