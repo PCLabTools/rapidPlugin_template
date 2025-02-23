@@ -24,10 +24,11 @@ enum class rapidPluginErrors_t
   UNKNOWN_ERROR,            // Unknown error is a catch to be used when no other error is applicable
 '''
 
-custom_errors = '''  // template ERRORS
-  TEMPLATE_ERROR1,          // Template error 1
-  TEMPLATE_ERROR2,          // Template error 2
-  TEMPLATE_ERROR3,          // Template error 3
+custom_errors = '''
+  // template ERRORS
+  TEMPLATE_ERROR1,                  // Template error 1
+  TEMPLATE_ERROR2,                  // Template error 2
+  TEMPLATE_ERROR3,                  // Template error 3
 '''
 
 footer = '''};
