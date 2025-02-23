@@ -16,6 +16,10 @@
 #define rapidPlugin_template_stack_size 64
 #endif
 
+#ifndef rapidPlugin_template_interface_stack_size
+#define rapidPlugin_template_interface_stack_size 256
+#endif
+
 #include "rapidRTOS.h"
 
 /**
@@ -52,7 +56,7 @@ rapidPlugin_template::rapidPlugin_template(const char* identity)
  */
 BaseType_t rapidPlugin_template::run()
 {
-  return rapidPlugin::run(&main_loop, rapidPlugin_template_stack_size);
+  return rapidPlugin::run(&main_loop, rapidPlugin_template_stack_size, rapidPlugin_template_interface_stack_size);
 }
 
 /**
@@ -65,7 +69,7 @@ BaseType_t rapidPlugin_template::run()
  */
 BaseType_t rapidPlugin_template::runCore(BaseType_t core)
 {
-  return rapidPlugin::runCore(core, &main_loop, rapidPlugin_template_stack_size);
+  return rapidPlugin::runCore(core, &main_loop, rapidPlugin_template_stack_size, rapidPlugin_template_interface_stack_size);
 }
 
 #ifndef rapidPlugin_template_override_main_loop
